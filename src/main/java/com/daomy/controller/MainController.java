@@ -137,4 +137,12 @@ public class MainController {
 		return "admin";
 	}
 	
+	@GetMapping("/content_news")
+	public String ContentNews(@RequestParam int id, HttpServletRequest request)
+	{
+		request.setAttribute("news", newsService.findNews(id));
+		request.setAttribute("news_list", newsService.findAll());
+		return "content_news";
+	}
+	
 }

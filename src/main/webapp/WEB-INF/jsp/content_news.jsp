@@ -1,16 +1,11 @@
 
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Pragma" content="no-cache"> 
-    <meta http-equiv="Cache-Control" content="no-cache"> 
-    <meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT">
     <title>WELCOME TO ICSSE 2017</title>
     <link href="static/css/show_img.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="static/js/jquery-1.7.2.min.js"></script>
@@ -19,75 +14,10 @@
     <link rel="shortcut icon" type="image/png" href="static/Images/logo.png" /><link href="static/css/lightbox.css" rel="stylesheet" type="text/css" />
     <script src="static/js/lightbox.min.js" type="text/javascript"></script>
     <link href="static/css/search_Article.css" rel="stylesheet" />
-    <script language="javascript" type="text/javascript">
-        function SearchProcess(event) {
-            if (event.keyCode == 13) {
-                OnSearch(document.getElementById('txtSearchArticle').value);
-                return false;
-            }
-            return true;
-        }
-        function OnSearch(query) {
-            PSCPortal.Services.CMS.SearchAndPaging(query, currentPage, OnSearchSuccess, OnSearchFailed);
-        }
-
-        function OnSearchSuccess(results, context, methodName) {
-            var position = results.indexOf('_');
-            totalRecords = results.substring(0, position);
-            results = results.substring(position + 1);
-            LoadContentAndPaging(results);
-        }
-        function OnSearchFailed(results, context, methodName) {
-        }
-        function retitleUrl(str) {
-            str = str.replace(/^\s+|\s+$/g, ''); // trim
-            str = str.toLowerCase();
-            // remove accents, swap ñ for n, etc
-            var from = "àáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ·/_,:;";
-            var to = "aaaaaaaaaaaaaaaaadeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyy------";
-            for (var i = 0, l = from.length ; i < l ; i++) {
-                str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
-            }
-            str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
-              .replace(/\s+/g, '-') // collapse whitespace and replace by -
-              .replace(/-+/g, '-'); // collapse dashes
-            return str;
-        };
-
-        function popunder() {
-            $('a').not('[href^="http"],[href^="https"],[href^="mailto:"],[href^="#"]').each(function () {
-                $(this).attr('href', function (index, value) {
-                    if (value != undefined) {
-                        var index = value.indexOf("Default.aspx");
-                        if (index >= 0)
-                            return value = "/" + value.substring(index, value.length);
-                    }
-                });
-            });
-            var articleId = '' != '' ? '' : '';
-            var topicId = '' != '' ? '' : '';
-            var moduleId = '' != '' ? '' : '';
-            if (articleId != '') {
-                if (window.history.state == null) {
-                    if (articleId.indexOf("/") > -1)
-                        articleId = articleId.substr(0, articleId.indexOf("/"));
-                    window.history.replaceState({ ArticleId: articleId }, "ArticleId", "/ArticleId/" + articleId + "/" + retitleUrl(''));
-                }
-            }
-            if (topicId != '') {
-                if (window.history.state == null) {
-                    if (topicId.indexOf("/") > -1)
-                        topicId = topicId.substr(0, topicId.indexOf("/"));
-                    window.history.replaceState({ TopicId: topicId }, "TopicId", "/TopicId/" + topicId + "/" + retitleUrl(''));
-                }
-            }
-            
-        }
-    </script>
     <link href="static/css/main.css" rel="stylesheet" />
     <link href="static/css/mainPortlets.css" rel="stylesheet" />
 </head>
-<body class="body" onload='popunder();'>
+<body class="body">
 
 <form name="form1" method="post" action="./" id="form1">
     <div class="gray">
@@ -232,100 +162,64 @@
 <!--CENTER PAGE-->
     <tr valign="top">
         <!--LEFT CONTENT-->
-		<td>
-            <div id="pnCenter">
-		      	<div id="pnCenterDisplay" style="width:692px;float:left">
-			     	<div id='ctl06_portlet_43f9ded1-4c3b-4b8b-8d8a-01a3ec30711c' style="float:left;">
-                        <div>
-					       <style>
-                            </style>
-                            <div id="main">
-                                <div id="head">
-                                </div>
-                                <div id="head-link">
-                                </div>
-                                <div id="left">
-                                </div>
-                                <div id="content">
-                                </div>
-                                <div id="right">
-                                </div>
-                                <div id="footer">
-                                </div>
-                                </div>
+		<td><div id="pnCenter">
+            <div id="pnCenterDisplay" style="width:692px;float:left">
+                
+                <link href="static/css/TopicArticleDisplay.css" rel="stylesheet" type="text/css" />
+                <link href="static/css/contact.css" rel="stylesheet" type="text/css" />
 
-				        </div>
-                    </div>
-                    <!--Content-->
-                    <div id='ctl06_portlet_a956cccc-dea3-4440-82a1-2684967a114f' style="float:left;">
-                        <div>
-					       <p class="MsoNormal" style="margin: 6pt 0cm 0.0001pt; text-align: justify;">
-                                <table style="text-align: justify;">
-                                    <tbody>
-                                        <tr>
-                                            <td style="border: 1px solid #c00000; background-color: #dbe5f1;padding-left: 5px;padding-right: 5px">
-                                            <div style="text-align: center;"><br />
-                                            <strong><span style="color: #0070c0;">WELCOME TO ICSSE 2017</span></strong></div>
-                                            <span style="text-align: justify;"><br />
-                                            &nbsp; <span style="font-size: 16px;">&nbsp;System Science and Engineering has emerged as a research field that covers a wide spectrum of modern technology. A system can be considered as a collection of entities and their interrelationships gathered together to form a whole greater than the sum of the entities. It also involves people, organizations, cultures, activities and interrelationships among them. While systems composed of autonomous subsystems are not new, increased data density, connectivity and ubiquitous computational resources have increased their interdependence and interaction complexity. This has in turn made the already difficult job of planning, developing and deploying complex systems even more difficult.<br />
-                                            </span></span><span style="font-size: 16px;"><span style="font-size: 16px;"><span style="text-align: justify; font-size: 16px;"><br />
-                                            &nbsp; &nbsp;Technology advancement not only provides opportunities for improving system capabilities but also introduces development risks that must be weighed and managed. Thus, it is our goal to bring together scholars from all areas to have a forum to discuss, demonstrate and exchange research ideas in the scope of system science and engineering.</span><br style="text-align: justify;" />
-                                            <br style="text-align: justify;" />
-                                            <span style="text-align: justify; font-size: 16px;">&nbsp; &nbsp;The International Conference on System Science and Engineering 2017 (ICSSE 2017) is an international conference that will take place in Ho Chi Minh City during July 21-23, 2017. This event will provide a great opportunity for scientists, engineers, and practitioners from all over the world to present the latest system design concepts, research results, developments and applications, as well as to facilitate interactions between scholars and practitioners. ICSSE 2017 will feature plenary speeches in emerging technology topics given by world renowned scholars. The proceedings of ICSSE 2017 will be published by the IEEE with EI indexing. In addition, selected high-quality papers will be published by special issues of SCI-indexed journals.</span>&nbsp;</span><br />
-                                            </span>
-                                            <br />
-                                            <strong>ICSSE <strong style="text-align: justify;">PUBLISHED&nbsp;</strong>PROCEEDINGS</strong><br />
-                                            <br />
-                                            ICSSE 2012: <a href="http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6246741" target="_blank">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6246741</a><br />
-                                            ICSSE 2014: <a href="http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6879759" target="_blank">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6879759</a><br />
-                                            ICSSE 2016: <a href="http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7548195" target="_blank">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7548195</a><br />
-                                            ICSSE 2017:&nbsp;<a href="http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=8024255" target="_blank">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=8024255</a><br />
-                                            <br />
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <br />
-                                <br />
-                                </p>
+                <script type="text/javascript">
+                    function OnSendArticle() {
+                        var result = window.showModalDialog("/Modules/CMS/SendArticle.aspx", document.URL, "dialogHeight: 320px; dialogWidth: 450px;");
+                    }
+                    function OnBack() {
+                        window.history.back();
+                    }
+                    function OnGoToHead() {
+                        window.moveTo(0, 0);
+                    }
 
-				        </div>
-                    </div>
-                    <!--LOGO-->
-                    <div id='ctl06_portlet_08f30a30-e80a-4920-91fe-e32965976466' style="float:left;">
-                        <div>
-                            <span style="color: #0070c0;"><strong>SPONSORED BY<br />
-                                <br />
-                                <br />
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align: center;">&nbsp; &nbsp;&nbsp;<a href="http://hcmute.edu.vn/" target="_blank"><img alt="" src="static/Images/logo_HCMUTE.png" style="color: #0070c0; width: 80px; vertical-align: middle;" /></a></td>
-                                            <td style="text-align: center; vertical-align: middle;">&nbsp; &nbsp; <a href="http://ieee.org/" target="_blank"><img alt="" src="static/Images/IEEEpng.png" style="color: #0070c0; width: 200px; vertical-align: middle;" /></a></td>
-                                            <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="http://www.ieeesmc.org/" target="_blank"><img alt="" src="static/Images/logo-ieee-smc-and.png" style="color: #0070c0; width: 180px; vertical-align: middle;" /></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;<a href="http://www.twtasse.org/system_en/" target="_blank"><img alt="" src="static/Images/TASSE_LOGO.jpg" style="width: 180px;" /></a><br />
-                                            </td>
-                                            <td style="text-align: center; vertical-align: middle;"><a href="http://www.dost.hochiminhcity.gov.vn/default.aspx" target="_blank"><img alt="" src="static/Images/logo_so_en.jpg" style="width: 120px;" /></a>&nbsp;</td>
-                                            <td>&nbsp; &nbsp; &nbsp;&nbsp;<a href="http://www.daikin.com.vn/en/index" target="_blank"><img alt="" src="static/Images/daikin_logo_dowanload.png" style="width: 200px;" /></a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <br />
-                                <div style="text-align: center;"><br />
+                </script>
+                <script type="text/javascript">
+
+                    $(document).ready(function () {
+
+                        $(".slidingDiv").hide();
+                        $(".show_hide").show();
+
+                        $('.show_hide').click(function () {
+                            $(".slidingDiv").slideToggle();
+                        });
+
+                    });
+
+                </script>
+
+                <div class="bg_display">
+                    <div class="display" style="float: left; width: 100%;">
+                        <div class="title_display">
+                             <a style='color:#666;' href=/?TopicId=31ca0f13-71be-4bd9-ad28-d3589a3cf6d2>Latest news </a> 
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <div style="margin-left: 5px; margin-bottom: 10px;">
+                                <div class="ct_tin_display">
+                                    <div class="articleTitle">
+                                        <a href="#">${news.title }</a>
+                                    </div>                                   
+                                    <div class="articleContent">
+                                        ${news.content }
+                                    </div>
                                 </div>
-                                <br />
-                                <br />
-                                <br />
-                                </strong>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
-                                <br />
-                            </span>
-
-				        </div>
+                                                            
+                            </div>
+            
+                        </div>
                     </div>
-			     </div>
-             </div>
+                </div>
+
+
+            </div>
+        </div>
          </td>
 
          <!--RIGHT CONTENT-->
@@ -344,7 +238,7 @@
                                 </div>
                                 <div class="listtb_phong">
                                     <ul>
-                                    	<c:forEach var="news1" items="${news}">
+                                    	<c:forEach var="news1" items="${news_list}">
 	                                        <li><a href="content_news?id=${news1.news_id }">
 	                                            <p>Create Date <fmt:formatDate type = "date" value="${news1.date_create}"/></p>
 	                                            ${news1.title }</a></li>                                            
