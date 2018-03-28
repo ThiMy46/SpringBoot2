@@ -203,7 +203,7 @@
                                         </li>
                                         <li class="rmItem" style="float: right;"><a href="#" class="rmLink rmRootLink"><span class="rmText"></span></a>
                                         </li>
-                                        <li class="rmItem rmLast" style="float: right;"><a href="/" class="rmLink rmRootLink"><span class="rmText">Log out</span></a>
+                                        <li class="rmItem rmLast" style="float: right;"><a href="logOut" class="rmLink rmRootLink"><span class="rmText">Log out</span></a>
                                         </li>
             						</ul><input id="ctl06_portlet_800886a8-ccb5-40dd-813a-2c02ac0d2e92_RadMenu_ClientState" name="ctl06_portlet_800886a8-ccb5-40dd-813a-2c02ac0d2e92_RadMenu_ClientState" type="hidden" />
             					</div>

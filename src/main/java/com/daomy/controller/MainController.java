@@ -96,6 +96,14 @@ public class MainController {
 		return "admin";
 	}
 	
+	@GetMapping("/logOut")
+	public String logOut(HttpSession session, HttpServletRequest request)
+	{
+		session.invalidate();
+		request.setAttribute("news", newsService.findAll());
+		return "home";
+	}
+	
 	@GetMapping("/program")
 	public String program(HttpServletRequest request){
 		request.setAttribute("news", newsService.findAll());
