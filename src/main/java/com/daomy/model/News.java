@@ -19,6 +19,7 @@ public class News {
 	private String content;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date_create;
+	private String accountname;
 	
 	public News(){
 		
@@ -28,12 +29,13 @@ public class News {
 		this.news_id=news_id;
 	}
 	
-	public News(int news_id,String title, String content, Date date_create) {
+	public News(int news_id,String title, String content, Date date_create,String accountname) {
 		super();
 		this.news_id=news_id;
 		this.title = title;
 		this.content = content;
 		this.date_create = date_create;
+		this.accountname=accountname;
 	}
 	
 	public int getNews_id() {
@@ -59,6 +61,14 @@ public class News {
 	}
 	public void setDate_create(Date date_create) {
 		this.date_create = date_create;
+	}
+
+	public String getAccountname() {
+		return accountname;
+	}
+
+	public void setAccountname(String accountname) {
+		this.accountname = accountname;
 	}
 	
 }

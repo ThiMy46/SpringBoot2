@@ -20,14 +20,6 @@ public class AccountService implements AccountRe{
 		this.accRepository = accRepository;
 	}
 	
-	public List<Account> findAllAcc(){
-		List<Account> acc=new ArrayList<Account>();
-		for(Account account:accRepository.findAll()){
-			acc.add(account);
-		}
-		return acc;
-	}
-
 	@Override
 	public Account findByAccountnameAndPassword(String accountname, String password) {
 		return accRepository.findByAccountnameAndPassword(accountname, password);

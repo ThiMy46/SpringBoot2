@@ -242,7 +242,7 @@
                             <div style="margin-left: 5px; margin-bottom: 10px;">
                                 <div class="ct_tin_display" style="width: 100%;">
                                     <div class="articleTitle">
-                                        Hello,<span style="font-style: italic"> Admin </span>
+                                        Hello,<span style="font-style: italic"> ${SESSION_FULL_NAME} </span>
                                     </div>
                                     <div class="articleContent">
                                         <div style="text-align: center;">
@@ -283,6 +283,10 @@
                                 </span></strong></span></p>
                                 </td>
                                 <td style="padding: 0.75pt; width: 50px; background: #999999;">
+                                <p style="margin-left: 3pt; text-align: center;"><span style="font-size: 14px; font-family: &quot;times new roman&quot;;"><strong><span style="font-size: 12pt; color: #002060;">ACTHOR <br />
+                                </span></strong></span></p>
+                                </td>
+                                <td style="padding: 0.75pt; width: 50px; background: #999999;">
                                 <p style="margin-left: 3pt; text-align: center;"><span style="font-size: 14px; font-family: &quot;times new roman&quot;;"><strong><span style="font-size: 12pt; color: #002060;">EDIT <br />
                                 </span></strong></span></p>
                                 </td>
@@ -311,6 +315,9 @@
 	                                <td style="padding: 0.75pt; width: 150px; background: #cccccc;">
 	                                <p style="margin: 9pt 0cm 0.0001pt 3pt; text-align: center;"><span style="font-family: &quot;times new roman&quot;; font-size: 16px; color: #002060;">
 	                                <fmt:formatDate pattern="yyyy-MM-dd" value="${news.date_create}"/></span></p>
+	                                </td>
+	                                <td style="padding: 0.75pt;  background: #cccccc;">
+	                                <p style="margin: 9pt 0cm 0.0001pt 3pt; text-align: center;"><span style="font-family: &quot;times new roman&quot;; font-size: 16px; color: #002060;">${news.accountname }</span></p>
 	                                </td>
 	                                <td style="padding: 0.75pt; width: 50px; background: #cccccc;">
 	                                <p style="margin: 9pt 0cm 0.0001pt 3pt; text-align: center;"><a href="update-news?id=${news.news_id }"><span class="glyphicon glyphicon-pencil"></span></a></p>

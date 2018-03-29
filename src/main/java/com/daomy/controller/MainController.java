@@ -38,8 +38,11 @@ public class MainController {
 	}
 	
 	@GetMapping("/newNews")
-	public String NewNews(){
-		return "NewNews";
+	public String NewNews(HttpSession session){
+		if(session.getAttribute("SESSION_FULL_NAME")!=null){
+			return "NewNews";
+		}
+		return "home";
 	}
 	
 	@GetMapping("/admin")
@@ -116,12 +119,15 @@ public class MainController {
 	}
 	
 	@PostMapping("/save-news")
-	public String saveNews(@Valid News news, BindingResult bindingResult,RedirectAttributes redirect){
+	public String saveNews(@Valid News news, BindingResult bindingResult,RedirectAttributes redirect, HttpSession session){
+		if(session.getAttribute("SESSION_FULL_NAME")!=null){
 			news.setDate_create(new Date(System.currentTimeMillis()));
+			news.setAccountname(session.getAttribute("SESSION_FULL_NAME").toString());
 			newsService.save(news);
-			//request.setAttribute("news", newsService.findAll());
 			redirect.addFlashAttribute("susscess","Save news susscessfully!!!");
 			return "redirect:/admin";	
+		}
+		return "home";
 	}
 	
 	@GetMapping("/update-news")
